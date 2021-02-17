@@ -31,11 +31,15 @@ for key,value in dictSample.items():
 
 
 #Guessing Game. Accept a guess number and tell us if it's higher or less than the hardcoded number
+import random
+guessCount = random.randint(1,11)
 x=int(input("Please enter number of your choice:"))
-y=20
-if x<y:
-  print("input value is less than expected")
-elif x>y:
-  print("input value is greater than expected")
-else:
-  print("Value is as expected")
+while guessCount!=x:
+  if x<guessCount:
+    print("input value is less than expected")
+    x=int(input("Please enter number of your choice:"))
+  elif x>guessCount:
+    print("input value is greater than expected")
+    x=int(input("Please enter number of your choice:"))
+print("Value as expected")
+
