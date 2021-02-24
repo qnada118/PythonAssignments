@@ -55,3 +55,40 @@ print(sys.argv)
 
 
 #Rewrite the guessing game program to throw a custom error when the user is out of tries.
+#accept input from a user and handle type, value errors
+import random
+
+counter = 0
+expectedValue = random.randint(1, 10)
+for attempt in range(5):
+    try:
+        inputValue = int(input("Enter value:"))
+        if inputValue < expectedValue:
+            print("Sorry! Value less than expected value")
+        elif inputValue > expectedValue:
+            print("Sorry! Value greater than expcted value")
+        else:
+             print("Good job! your guess is right")
+             break
+        counter += 1
+    except ValueError:
+        print("Please enter a integer value")
+        
+        
+#demonstrate key and index errors in an example
+
+try:
+    sampleDict = {'sample':'test'}
+    print(sampleDict['value'])
+
+except KeyError:
+    print("Key Error!")
+
+
+
+try:
+    sampleList = [1,2,3]
+    print(sampleList[3])
+
+except IndexError:
+    print("Index Error!")
